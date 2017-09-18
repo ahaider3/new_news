@@ -23,15 +23,15 @@ import WorldMap from './misc/WorldMap';
 import Arc from './misc/Arc';
 
    	var titleStyle = {
-	 	fontFamily: "monospace",
+	 	fontFamily: "helvetica",
 		fontWeight: "bold",
-		backgroundColor: "rgba(152, 251, 152, 0.9)",
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
 		width: "100%",
 		textAlign: "center",
 		padding: 10,
 		margin: 0,
 		fontSize: 15,
-		color: "black",
+	        color: "rgba(252,251,227,1)",
 		display: 'flex',
 		justifyContent: 'center',
 		borderRadius: 0
@@ -76,15 +76,16 @@ class TweetLabel extends React.Component {
   }
   render() {
  	var labelStyle = {
-	 	fontFamily: "monospace",
-		fontWeight: "bold",
-		backgroundColor: "rgba(152, 251, 152, 0.2)",
+	 	fontFamily: "helvetica",
+		fontWeight: "lighter",
+//		backgroundColor: "rgba(152, 251, 152, 0.2)",
 		width: "60%",
 		textAlign: "center",
 		padding: 10,
 		margin: 0,
 		fontSize: 15,
-		color: "black"
+//		color: "black"
+		color: "rgba(252,251,227,1)",
 		
 	};
 
@@ -235,7 +236,7 @@ render() {
       }
       var pie_data = { 
 	label: 'Sentiments',
-        values: [{x: 'Positive', y:pos.length}, {x: 'Negative', y:neg.length}, 
+        values: [{x: 'Positive', y:pos.length, color:'white'}, {x: 'Negative', y:neg.length}, 
 		{x:'Neutral', y: this.props.sentiments.length-pos.length-neg.length}]};
 
       var data= {label: '', values: num_data};
@@ -267,7 +268,7 @@ render() {
 
 	};
       var graphBG = {
-        fontFamily: "monospace",
+        fontFamily: "helvetica",
 	fontWeight: "bold",
 	width: "100%",
 	textAlign: "center",
@@ -277,7 +278,7 @@ render() {
 	color: "white",
 	display: 'flex',
 	justifyContent: 'center',
-	borderRadius: 20
+	borderRadius: 0
 
 	};
 
@@ -287,10 +288,10 @@ render() {
         <WorldMap />
        </div>
       <div style={titleStyle}>
-	What the world feels...
+	How the world feels...
       </div>
       <div style={graphBG}>
-	<PieChart data={pie_data} width={600} height={400} margin={{top: 10, bottom: 10, left: 100, right: 100}} />
+	<PieChart data={pie_data} color={"white"} width={600} height={400} margin={{top: 10, bottom: 10, left: 100, right: 100}} />
        
       </div>
       </div>

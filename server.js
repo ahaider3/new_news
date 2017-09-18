@@ -15,6 +15,7 @@ var mongoose = require('mongoose')
 var Tweets = require('./models/basic_news')
 var TopNews = require('./models/top_news')
 var FollowAnalysis = require('./models/follow_analysis')
+var FollowAnalysis1 = require('./models/follow_analysis1')
 
 var SourceRatings = require('./models/source_ratings')
 
@@ -58,6 +59,13 @@ app.get('/api/sourceRatings', function(req, res, next) {
 app.get('/api/followAnalysis', function(req, res, next) {
 
  FollowAnalysis.find({}).exec(function(err,data) {
+
+	res.json(data); } );
+
+});
+app.get('/api/followAnalysis1', function(req, res, next) {
+
+ FollowAnalysis1.find({}).exec(function(err,data) {
 
 	res.json(data); } );
 

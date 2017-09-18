@@ -4,6 +4,18 @@ import Img from 'react-image-load';
 import NewsCardStore from '../stores/NewsCardStore'
 import {Route} from 'react-router-dom';
 
+
+   	var titleStyle = {
+	 	fontFamily: "helvetica",
+		fontWeight: "lighter",
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
+		color: "rgba(252,251,227,1)",
+
+		height: "100px",
+		
+	};
+
+
 var buttonStyle = {
 		fontSize: "1em",
 		width: "20%",
@@ -41,22 +53,39 @@ class Label extends React.Component {
   }
   render() {
    	var labelStyle = {
-	 	fontFamily: "monospace",
-		fontWeight: "bold",
+	 	fontFamily: "helvetica",
+		fontWeight: "lighter",
 		backgroundColor: "rgba(152, 251, 152, 0.2)",
 		width: "60%",
 		textAlign: "center",
 		padding: 10,
 		margin: 0,
 		fontSize: 15,
-		color: "#66FFFF"
+		textDecoration: 'none',
+		color: "black"
 		
 	};
+        var linkStyle = {
+
+	backgroundImage: "url(https://image.shutterstock.com/z/stock-photo-closeup-old-and-pale-rough-red-cement-wall-background-in-black-and-white-tone-370690043.jpg)",
+	textDecoration:'none',
+	color:'black'
+	};
+	var bareStyle = {
+
+	textDecoration:'none',
+	color: "rgba(252,251,227,1)",
+
+//	color:'rgba(108,123,139,1)'
+//	color:'black'
+
+	};
+
     var news_temp1 = [].concat.apply([], this.props.tweets)
 
 	return (
 	//	<div style={labelStyle}><Link to={{pathname: '/basic/tweets', query:this.props.text}}> {this.props.text}</Link>
-		<div style={labelStyle}><Link to={'/basic/tweets/' + this.props.id}> {this.props.text}</Link>
+		<div><Link to={'/basic/tweets/' + this.props.id} style={bareStyle}> {this.props.text}</Link>
 
 //		{this.props.children}
 		</div>
@@ -109,8 +138,10 @@ class NewsCard extends React.Component {
 		margin: 5,
 		display: "inline-block",
 		justifyContent: "space-between",
-		height: 150,
-		width: "30%"
+		height: "100px",
+		width: "46%",
+		borderRadius: 10
+
 	};
     let text = null;
     let button = null;
@@ -124,21 +155,33 @@ class NewsCard extends React.Component {
 	button = <MoreInfoButton onClick={this.handleMoreInfo}/>;
 	console.log("Have Button");
     }
-    console.log(this.state.showAnalysis);
+    var percent_width= (this.props.score[1]/this.props.max)
+    var max_width=100
+    var curr_width = Math.ceil(percent_width *max_width).toString();
+    var max_height=10
+    console.log(percent_width);
+    console.log(this.props.max);
     return (
 
         <div style={squareStyle} key = {this.props.text}>
-		<Img
-		   className="imgResponsive"
-		   height="150"
-		   width="60%"
-		   src={this.props.url}
-		/>
-		<Label text={text} id={this.props._id}/>
-
+          <div style={titleStyle}>
+		Popularity Score: 
+                <svg style={{display: "block", height: "100px"}}>
+                 <rect height={max_height} width={max_width+10} fill={"rgba(56,56,56,1)"}></rect>
+		 <rect height={max_height} width={curr_width} fill="red"></rect>
+		</svg>
+         </div>
+		<Label text={this.props.desc} id={this.props._id}/>
         </div>
     );
   }
 }
 
 export default NewsCard;
+	/*	<Img
+		   className="imgResponsive"
+		   height="150"
+		   width="60%"
+		   src={this.props.url}
+		/>
+*/

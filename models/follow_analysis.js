@@ -6,6 +6,6 @@ var followSchema = new mongoose.Schema({
   text: String,
   sentiment: Number,
   time: String,
-}, {collection: 'follow'});
+}, {collection: 'follow_ft'});
 
 module.exports = mongoose.model('FollowAnalysis', followSchema);
