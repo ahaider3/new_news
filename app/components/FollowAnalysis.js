@@ -70,7 +70,10 @@ class FollowAnalysis extends React.Component {
         obj_list1[src] = [];
       }
       var date = new Date(this.state.data1[i].time);
-      obj_list1[src].push({x: date, y:this.state.data1[i].frequency});
+//      obj_list1[src].push({x: date, y:this.state.data1[i].freq});
+      if (this.state.data1[i].irfft){
+         obj_list1[src].push({x: date, y: this.state.data1[i].irfft});
+	}
     }
     for (var i = 0; i < this.state.data.length;i++){
       var src = this.state.data[i].source;
@@ -164,7 +167,7 @@ class FollowAnalysis extends React.Component {
     var summaries = []
     var theme_col = "rgba(252,251,227,1)"
     console.log("BEFORE");
-    console.log(this.state.data1);
+    console.log(obj_list1);
     return (
 
       <div style={backColor} >
