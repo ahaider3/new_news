@@ -3,15 +3,42 @@ import {Link} from 'react-router';
 import Img from 'react-image-load';
 import NewsCardStore from '../stores/NewsCardStore'
 import {Route} from 'react-router-dom';
+	var squareStyle1 = {
+		padding: 0,
+		marginLeft:"5px",
+		margin: "15px",
+		display: "inline-block",
+//		fontSize: "10px",
+///                display: "flex",
+//		flexDirection: "row",
+//		flexWrap: "wrap",
+//		justifyContent: "space-between",
+//		textAlign: "justify",
+		height: "85px",
+		width: "30%",
+//		borderRadius: 10,
+		color:"red",
+		borderColor: "rgba(47,79,79,.4)",
+                borderStyle: "solid",
+		borderWidth: "1px",
+
+	};
 
 
-   	var titleStyle = {
+   	var titleStyle2 = {
 	 	fontFamily: "helvetica",
 		fontWeight: "lighter",
+		
+//		margin: "5px",
 //		backgroundColor: "rgba(152, 251, 152, 0.9)",
-		color: "rgba(252,251,227,1)",
+//		color: "rgba(252,251,227,1)",
+		marginTop: "5px",
+		marginLeft: "285px",
+		color: "black",
+		float: "right",
 
-		height: "100px",
+
+//		height: "100px",
 		
 	};
 
@@ -62,7 +89,9 @@ class Label extends React.Component {
 		margin: 0,
 		fontSize: 15,
 		textDecoration: 'none',
-		color: "black"
+		color: "black",
+		float: "right",
+		
 		
 	};
         var linkStyle = {
@@ -74,10 +103,12 @@ class Label extends React.Component {
 	var bareStyle = {
 
 	textDecoration:'none',
-	color: "rgba(252,251,227,1)",
-
+	color: "rgba(47,79,79,.8)",
+	fontWeight: "bold",
+	padding: "10px",
 //	color:'rgba(108,123,139,1)'
-//	color:'black'
+//	color:'black',
+	float:"left",
 
 	};
 
@@ -86,9 +117,9 @@ class Label extends React.Component {
 	return (
 	//	<div style={labelStyle}><Link to={{pathname: '/basic/tweets', query:this.props.text}}> {this.props.text}</Link>
 		<div><Link to={'/basic/tweets/' + this.props.id} style={bareStyle}> {this.props.text}</Link>
-
-//		{this.props.children}
 		</div>
+//		{this.props.children}
+//		</div>
 //                const Button = () => (
 //		<Route render={({ history }) => (
                  
@@ -133,16 +164,18 @@ class NewsCard extends React.Component {
   }
 
   render() {
-	var squareStyle = {
+/*	var squareStyle = {
 		padding: 10,
-		margin: 5,
+		margin: 0,
+		outlineColor: "black",
+                outlineStyle: "dotted",
 		display: "inline-block",
 		justifyContent: "space-between",
-		height: "100px",
-		width: "46%",
+		height: "30%",
+		width: "35%",
 		borderRadius: 10
 
-	};
+	};*/
     let text = null;
     let button = null;
     if (this.state.showAnalysis) {
@@ -163,17 +196,22 @@ class NewsCard extends React.Component {
     console.log(this.props.max);
     return (
 
-        <div style={squareStyle} key = {this.props.text}>
-          <div style={titleStyle}>
+        <div style={squareStyle1} key = {this.props.text}>
+          <div style={titleStyle2}>
 		Popularity Score: 
-                <svg style={{display: "block", height: "100px"}}>
+                <svg style={{display: "block", height: "10px"}}>
                  <rect height={max_height} width={max_width+10} fill={"rgba(56,56,56,1)"}></rect>
 		 <rect height={max_height} width={curr_width} fill="red"></rect>
 		</svg>
+
          </div>
-		<Label text={this.props.desc} id={this.props._id}/>
+
+	  <Label text={this.props.text} id={this.props._id}/>
         </div>
     );
+/* /   return (
+         <div style={squareStyle1}> <h1> {this.props.text} </h1> </div>
+    );*/
   }
 }
 

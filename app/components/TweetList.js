@@ -60,10 +60,10 @@ class TweetList extends React.Component {
 		     backgroundRepeat: "repeat",
 		     overflow: 'hidden',
 };
-
+    var newBG={backgroundColor: "white"}
     return (
 
-      <div style={backColor}>
+      <div style={newBG}>
 	{news}
       </div>
     );

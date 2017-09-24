@@ -31,7 +31,7 @@ import Arc from './misc/Arc';
 		padding: 10,
 		margin: 0,
 		fontSize: 15,
-	        color: "rgba(252,251,227,1)",
+	        color: "black",
 		display: 'flex',
 		justifyContent: 'center',
 		borderRadius: 0
@@ -361,7 +361,7 @@ class TweetCard extends React.Component {
     });
     var tweet_graph = <TweetGraph sentiments={this.props.sentiments} />
     console.log("DOUBLE")
-    console.log(tweets_loc)
+    console.log(tweets)
 
 
     return (

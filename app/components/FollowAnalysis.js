@@ -92,8 +92,8 @@ class FollowAnalysis extends React.Component {
         obj_list[src] = []
       }
 
-      if (date1.getYear() >= 117 && date1.getMonth() >= 8 && date1.getDate() >=16){
-      obj_list[src].push({x: date1, y: this.state.data[i].sentiment});
+      if (date1.getYear() >= 117 && date1.getMonth() >= 8 && date1.getDate() >=16 && this.state.data[i].irfft){
+      obj_list[src].push({x: date1, y: this.state.data[i].irfft});
       }
       val_dicts[src].push({x: date, y: this.state.data[i].sentiment});
     }
@@ -162,21 +162,31 @@ class FollowAnalysis extends React.Component {
                      color:"white",
 		     overflow: 'hidden',
 };
-
+    var newBack = {backgroundColor:"white",
+		   marginLeft:"400px",
+		}
 //    var summaries = <SourceCard summary={dict} />
     var summaries = []
-    var theme_col = "rgba(252,251,227,1)"
+ //   var theme_col = "rgba(252,251,227,1)"
+
+    var theme_col = "rgba(47,79,79,1)";
+
     console.log("BEFORE");
-    console.log(obj_list1);
+    console.log(obj_list);
     return (
 
-      <div style={backColor} >
-        <div style={{width: "70%"}}>
+      <div style={newBack} >
+        <div style={{width: "80%"}}>
         <VictoryChart theme={VictoryTheme.materical} scale={{x:"time"}}
-		style={{data: {fill:"red"}, labels: {fill:"red"}}}>
+		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}}>
+
+	<VictoryAxis dependentAxis={true} label={'Positivity'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }} width={500} tickValues={[1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5]}/>
+	<VictoryAxis dependentAxis={false} label={'Time'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }}  />
+
+
 	<VictoryLine
 	 style={{
-          data: { stroke: "red" },
+          data: { stroke: "tomato" },
           labels: {fontSize:2},
           parent: { border: "1px solid #ccc"}
          }}
@@ -199,26 +209,21 @@ class FollowAnalysis extends React.Component {
           data={obj_list["BreitbartNews"]}
  	  />
 
-	<VictoryLegend x={105} y={200}
-		centerTitle={"News Outlet"}
-                orientation={"horizontal"}
-		style={{border: {stroke: theme_col }}}
-		data={[
-			{name: "CNN ", symbol:{fill:"red"}, labels: {fill: theme_col}},
-			{name: "Fox News ", symbol:{fill:"green"},  labels: {fill: theme_col}},
-			{name: "Breitbart ", symbol:{fill:"teal"}, labels: {fill: theme_col}}
-		]} />
 
       </VictoryChart>
       </div>
 
 
-        <div style={{width: "70%"}}>
+        <div style={{width: "80%"}}>
+	
         <VictoryChart theme={VictoryTheme.materical} scale={{x:"time"}}
-		style={{data: {fill:"red"}, labels: {fill:"red"}}}>
+		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}} domain={{y:[0,500]}}>
+	<VictoryAxis dependentAxis={true} label={'Social Media Activity'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }} width={500}/>
+	<VictoryAxis dependentAxis={false} label={'Time'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }}  />
+
 	<VictoryLine
 	 style={{
-          data: { stroke: "red" },
+          data: { stroke: "tomato" },
           labels: {fontSize:2},
           parent: { border: "1px solid #ccc"}
          }}
@@ -241,14 +246,14 @@ class FollowAnalysis extends React.Component {
           data={obj_list1["BreitbartNews"]}
  	  />
 
-	<VictoryLegend x={105} y={200}
+	<VictoryLegend x={105} y={10}
 		centerTitle={"News Outlet"}
                 orientation={"horizontal"}
 		style={{border: {stroke: theme_col }}}
 		data={[
-			{name: "CNN ", symbol:{fill:"red"}, labels: {fill: theme_col}},
-			{name: "Fox News ", symbol:{fill:"green"},  labels: {fill: theme_col}},
-			{name: "Breitbart ", symbol:{fill:"teal"}, labels: {fill: theme_col}}
+			{name: "Liberals ", symbol:{fill:"tomato"}, labels: {fill: theme_col}},
+			{name: "Conservatives ", symbol:{fill:"green"},  labels: {fill: theme_col}},
+			{name: "Alt-Right ", symbol:{fill:"teal"}, labels: {fill: theme_col}}
 		]} />
 
       </VictoryChart>

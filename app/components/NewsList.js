@@ -3,6 +3,22 @@ import {Link} from 'react-router';
 import NewsListStore from '../stores/NewsListStore'
 import NewsListActions from '../actions/NewsListActions';
 import NewsCard from './NewsCard';
+	var squareStyle1 = {
+		padding: 10,
+		margin: 5,
+//		display: "inline-block",
+                display: "flex",
+		flexDirection: "row",
+		flexWrap: "wrap",
+		justifyContent: "space-between",
+//		height: "100px",
+		width: "10%",
+		borderRadius: 10,
+		outlineColor: "black",
+                outlineStyle: "dotted",
+
+	};
+
 
 
 function compare(a,b) {
@@ -68,9 +84,10 @@ class NewsList extends React.Component {
 		     backgroundRepeat: "repeat",
 		     overflow: 'hidden',
 };
+   var newBg = {backgroundColor: "white"}
 
     return (
-        <div style={backColor}>
+        <div style={newBg}>
 	{news}
 //        {this.props.children}
         </div>

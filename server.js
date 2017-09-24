@@ -18,6 +18,8 @@ var FollowAnalysis = require('./models/follow_analysis')
 var FollowAnalysis1 = require('./models/follow_analysis1')
 
 var SourceRatings = require('./models/source_ratings')
+var NewsRatings = require('./models/news_ratings')
+
 
 
 var _ = require('underscore');
@@ -55,6 +57,15 @@ app.get('/api/sourceRatings', function(req, res, next) {
 	res.json(data); } );
 
 });
+
+app.get('/api/newsRatings', function(req, res, next) {
+
+ NewsRatings.find({}).exec(function(err,data) {
+
+	res.json(data); } );
+
+});
+
 
 app.get('/api/followAnalysis', function(req, res, next) {
 

@@ -11,7 +11,7 @@ class SourceRatingsActions {
   getSourceRatings(comp) {
 
     console.log('IN AJAX');
-    $.ajax({ url: '/api/sourceRatings' })
+    $.ajax({ url: '/api/newsRatings' })
       .done((data) => {
         console.log(data)
         this.actions.getSourceRatingsSuccess(data)
