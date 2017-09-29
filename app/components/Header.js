@@ -49,6 +49,32 @@ class Header extends React.Component{
 //		color: "white",
 		borderRadius: 0
 	};
+
+
+	var capStyle21_ = {
+	 	fontFamily: "HelvectiaNeue-Light",
+		fontWeight: "lighter",
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
+		textAlign: "left",
+                position:'absolute',
+		padding:0,
+		left: 1530,
+		top:10,
+//		marginLeft: "80px",
+//		top: '-85px',
+//                left:-"-500px",
+		margin: 0,
+		fontSize: 14,
+//		color: "rgba(252,251,227,1)",
+		color:"black",
+//		justifyContent: 'right',
+		textDecoration: 'none',
+
+//		color: "white",
+		borderRadius: 0
+	};
+
+
 	var capStyle21 = {
 	 	fontFamily: "HelvectiaNeue-Light",
 		fontWeight: "lighter",
@@ -56,7 +82,7 @@ class Header extends React.Component{
 		textAlign: "left",
                 position:'absolute',
 		padding:0,
-		left: 1630,
+		left: 1730,
 		top:10,
 //		marginLeft: "80px",
 //		top: '-85px',
@@ -119,10 +145,15 @@ class Header extends React.Component{
 			<Link to={'/'} style={capStyle2} > News Powered by Data </Link> 
 
 		</div>
-		<div style={capStyle21}> 
+		<div style={capStyle21_}> 
 
                 <Link to={'/robotJournalist'} style={capStyle1}> Journalism Powered by AI </Link>
                </div>
+		<div style={capStyle21}> 
+
+                <Link to={'/aboutus'} style={capStyle1}> AboutUs </Link>
+               </div>
+
 
 		<div style={capStyle}> 
 		<Link to={'/sources'} style={capStyle1} > Biases of the Media</Link>
