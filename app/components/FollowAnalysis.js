@@ -76,7 +76,7 @@ class FollowAnalysis extends React.Component {
 	}
     }
     for (var i = 0; i < this.state.data.length;i++){
-      var src = this.state.data[i].source;
+      var src = this.state.data[i].type;
 //      if (!(src in dict)){
 //        dict['source'] = [];
 //      }
@@ -172,7 +172,7 @@ class FollowAnalysis extends React.Component {
     var theme_col = "rgba(47,79,79,1)";
 
     console.log("BEFORE");
-    console.log(obj_list);
+    console.log(obj_list1);
     return (
 
       <div style={newBack} >
@@ -180,7 +180,7 @@ class FollowAnalysis extends React.Component {
         <VictoryChart theme={VictoryTheme.materical} scale={{x:"time"}}
 		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}}>
 
-	<VictoryAxis dependentAxis={true} label={'Positivity'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }} width={500} tickValues={[1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5]}/>
+	<VictoryAxis dependentAxis={true} label={'Positivity'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }} width={500}/>
 	<VictoryAxis dependentAxis={false} label={'Time'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }}  />
 
 
@@ -217,7 +217,7 @@ class FollowAnalysis extends React.Component {
         <div style={{width: "80%"}}>
 	
         <VictoryChart theme={VictoryTheme.materical} scale={{x:"time"}}
-		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}} domain={{y:[0,500]}}>
+		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}}>
 	<VictoryAxis dependentAxis={true} label={'Social Media Activity'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }} width={500}/>
 	<VictoryAxis dependentAxis={false} label={'Time'} style={{axisLabel: {padding:30, fontSize:12},tickLabels: {fontSize:10, padding:5} }}  />
 
@@ -235,7 +235,7 @@ class FollowAnalysis extends React.Component {
           labels: {fontSize:2},
           parent: { border: "1px solid #ccc"}
          }}
-          data={obj_list1["FoxNews"]}
+          data={obj_list1["the-wall-street-journal"]}
  	  />
 	<VictoryLine
 	 style={{
@@ -243,7 +243,7 @@ class FollowAnalysis extends React.Component {
           labels: {fontSize:2},
           parent: { border: "1px solid #ccc"}
          }}
-          data={obj_list1["BreitbartNews"]}
+          data={obj_list1["breitbart-news"]}
  	  />
 
 	<VictoryLegend x={105} y={10}

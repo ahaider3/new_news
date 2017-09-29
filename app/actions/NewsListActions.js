@@ -1,5 +1,5 @@
 import alt from '../alt';
-
+import $ from 'jquery';
 class NewsListActions {
   constructor() {
     this.generateActions(

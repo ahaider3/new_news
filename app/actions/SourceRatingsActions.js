@@ -1,4 +1,5 @@
 import alt from '../alt';
+import $ from 'jquery';
 
 class SourceRatingsActions {
   constructor() {
