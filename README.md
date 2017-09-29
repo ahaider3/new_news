@@ -1,5 +1,5 @@
 # new_news
 
 
-Code for worldnewsanalytics.com 
+Code for 
 <a href="http://worldnewsanalytics.com"> worldnewsanalytics.com </a>
