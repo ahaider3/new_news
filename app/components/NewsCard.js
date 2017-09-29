@@ -192,8 +192,9 @@ class NewsCard extends React.Component {
     var max_width=100
     var curr_width = Math.ceil(percent_width *max_width).toString();
     var max_height=10
-    console.log(percent_width);
-    console.log(this.props.max);
+//    console.log(percent_width);
+//    console.log(this.props.max);
+    console.log(this.props.score);
     return (
 
         <div style={squareStyle1} key = {this.props.text}>

@@ -68,7 +68,7 @@ class RobotJournalist extends React.Component {
 		     backgroundRepeat: "repeat",
 		     overflow: 'hidden',
 };
-    var newG  = {backgroundColor: "white"}
+    var newG  = {backgroundColor: "white", padding:10}
 //    var summaries = <SourceCard summary={dict} />
     var option = {'precision':2};
 //    var sort_scores = this.state.news.sort(compare);

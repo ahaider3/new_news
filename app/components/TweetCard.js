@@ -84,8 +84,8 @@ class TweetLabel extends React.Component {
 		padding: 10,
 		margin: 0,
 		fontSize: 15,
-//		color: "black"
-		color: "rgba(252,251,227,1)",
+		color: "black"
+//		color: "rgba(252,251,227,1)",
 		
 	};
 

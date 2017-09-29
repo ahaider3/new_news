@@ -7,6 +7,8 @@ import TweetList from './components/TweetList';
 import SourceRatings from './components/SourceRatings';
 import FollowAnalysis from './components/FollowAnalysis';
 import RobotJournalist from './components/RobotJournalist';
+import AboutUs from './components/AboutUs';
+
 
 
 
@@ -20,6 +22,8 @@ export default (
     <Route path='/sources' component={SourceRatings} />
     <Route path='/trends' component={FollowAnalysis} />
     <Route path='/robotJournalist' component={RobotJournalist} />
+    <Route path='/aboutus' component={AboutUs} />
+
 
 
 
