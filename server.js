@@ -16,6 +16,7 @@ var Tweets = require('./models/basic_news')
 var TopNews = require('./models/top_news')
 var FollowAnalysis = require('./models/follow_analysis')
 var FollowAnalysis1 = require('./models/follow_analysis1')
+var RJ = require('./models/rj')
 
 var SourceRatings = require('./models/source_ratings')
 var NewsRatings = require('./models/news_ratings')
@@ -82,6 +83,13 @@ app.get('/api/followAnalysis1', function(req, res, next) {
 
 });
 
+app.get('/api/rj', function(req, res, next) {
+
+ RJ.find({}).exec(function(err,data) {
+
+	res.json(data); } );
+
+});
 
 
 app.use(function(req, res) {
