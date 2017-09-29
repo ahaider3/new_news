@@ -41,6 +41,24 @@ class Header extends React.Component{
 //		color: "white",
 		borderRadius: 0
 	};
+   	var capStyle20 = {
+	 	fontFamily: "HelvectiaNeue-Light",
+		fontWeight: "lighter",
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
+		textAlign: "right",
+                position:'absolute',
+		padding: 10,
+		float: 'right',
+		margin: 0,
+		fontSize: 10,
+		color: "rgba(252,251,227,1)",
+		justifyContent: 'right',
+		textDecoration: 'none',
+
+//		color: "white",
+		borderRadius: 0
+	};
+
    	var capStyle1 = {
 	 	fontFamily: "HelvectiaNeue-Light",
 		fontWeight: "lighter",
@@ -63,6 +81,8 @@ class Header extends React.Component{
 		<div style={capStyle}> 
 		<Link to={'/sources'} style={capStyle1} > Biases of the Media</Link>
 		 <Link to={'/trends'} style={capStyle1}> News Trends </Link>
+		 <Link to={'/robotJournalist'} style={capStyle20}> Journalism Powered by AI </Link>
+
 		</div>
 
 		<div class="col-md-6 col-md-offset-3" style={headerStyle}> 
