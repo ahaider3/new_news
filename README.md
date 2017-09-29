@@ -2,3 +2,4 @@
 
 
 Code for worldnewsanalytics.com 
+<a href="http://worldnewsanalytics.com"/>
