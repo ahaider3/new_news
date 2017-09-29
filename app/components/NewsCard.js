@@ -188,7 +188,7 @@ class NewsCard extends React.Component {
 	button = <MoreInfoButton onClick={this.handleMoreInfo}/>;
 	console.log("Have Button");
     }
-    var percent_width= (this.props.score[1]/this.props.max)
+    var percent_width= (this.props.score/this.props.max)
     var max_width=100
     var curr_width = Math.ceil(percent_width *max_width).toString();
     var max_height=10

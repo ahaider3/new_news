@@ -13,6 +13,8 @@ var config = require('./config.js')
 
 var mongoose = require('mongoose')
 var Tweets = require('./models/basic_news')
+var Emails = require('./models/emails')
+
 var TopNews = require('./models/top_news')
 var FollowAnalysis = require('./models/follow_analysis')
 var FollowAnalysis1 = require('./models/follow_analysis1')
@@ -88,6 +90,19 @@ app.get('/api/rj', function(req, res, next) {
  RJ.find({}).exec(function(err,data) {
 
 	res.json(data); } );
+
+});
+app.post('/api/emails', function(req, res) {
+  
+  var email = new Emails({email:req.body.email})
+  console.log(req)
+  console.log(email)
+  email.save(function(err) {
+     if (err)
+      throw err;
+     else
+      console.log("success");
+   });
 
 });
 
