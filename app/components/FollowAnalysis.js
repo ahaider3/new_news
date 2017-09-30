@@ -15,6 +15,42 @@ import {scaleTime} from 'd3-scale';
 import {scaleLinear} from 'd3-scale';
 
 import { timeParse } from 'd3-time-format';
+   	var capStyle2 = {
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
+//		color: "rgba(252,251,227,1)",
+		color:"black",
+	//	textDecoration: 'none',
+
+	};
+
+
+   	var signupStyle = {
+	 	fontFamily: "HelvectiaNeue-Light",
+		fontWeight: "lighter",
+//		postion: 'absolute',
+//		backgroundColor: "rgba(152, 251, 152, 0.9)",
+//		width: "100%",
+//	        backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmaUMq-RyV2XkjO7kHmPiLOndAzeLErKuUBHfJ_TJoKdyYj3vb)",
+	//	backgroundColor: "black",
+		textAlign: "center",
+                verticalAlign:"center",
+		padding: 10,
+                width: "50%",
+		position: "relative",
+		left: "225px",
+		margin: 0,
+		fontSize: 16,
+	//	color: "rgba(252,251,227,1)",
+		color: "black",
+
+//		color: "white",
+
+//		display: 'flex',
+//		justifyContent: 'center',
+		borderRadius: 0
+		
+	};
+
 
 
 class FollowAnalysis extends React.Component {
@@ -176,6 +212,11 @@ class FollowAnalysis extends React.Component {
     return (
 
       <div style={newBack} >
+        <div style={signupStyle}>
+          {"These two graphs quantify human reactions from recent news events based on political ideoligies. More information on calculations: "}	<Link to={'/aboutus'} style={capStyle2} > here </Link> 
+
+        </div>
+
         <div style={{width: "80%"}}>
         <VictoryChart theme={VictoryTheme.materical} scale={{x:"time"}}
 		style={{data: {fill:"tomato"}, labels: {fill:"tomato"}}}>
